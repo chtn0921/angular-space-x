@@ -1,0 +1,38 @@
+<div class="row">
+    <div *ngFor="let details of detailsList" class="col-md-12 col-lg-4">
+        <div class="card rocket-details-card">
+            <div [id]="details.flight_number">
+                <div>
+                    <img [src]="details.links.mission_patch_small" alt="mission patch img not available on api"
+                        class="rocket-mission-image card-img-top" />
+                </div>
+                <div class="rocket-mission-name-flight-number">
+                    {{details.mission_name}} #{{details.flight_number}}
+                </div>
+                <div class="rocket-detail-label">
+                    Mission Ids:{{" "}}
+                    <ul>
+                        {{" "}}
+                        <li class="rocket-detail-value">{{details.mission_id}}</li>
+                    </ul>
+                </div>
+                <div class="rocket-detail-label">
+                    Launch Year:{{" "}}
+                    <span class="rocket-detail-value">{{details.launch_year}}</span>
+                </div>
+                <div class="rocket-detail-label">
+                    Successful Launch:{{" "}}
+                    <span class="rocket-detail-value">
+                        {{details.launch_success ? "True" : "False"}}
+                    </span>
+                </div>
+                <div class="rocket-detail-label">
+                    Successful Landing:{{" "}}
+                    <span class="rocket-detail-value">
+                        {{details.rocket.first_stage.cores[0]?.land_success ? "True" : "False"}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

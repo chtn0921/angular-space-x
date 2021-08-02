@@ -1,0 +1,83 @@
+<div *ngIf="isLoaded; else mainPage" class="app-loader-container">
+  <div class="App-loader-box">
+    <img src={{loader}} alt="loading..." />
+  </div>
+</div>
+<ng-template #mainPage>
+  <div class="app">
+    <h1 class="app-header">{{title}}</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <div class="card app-filter-card">
+            <div class="card-body">
+              <div class="card-title app-filter-header">
+                Filters
+              </div>
+              <div class="card-text app-filter-heading-launch-year">
+                Launch Year
+                <hr class="app-filters-hr" />
+              </div>
+
+              <div class="row">
+                <div class="app-filter-button-container">
+                  <button *ngFor="let year of uniqueLaunchYears" class="app-filter-button btn btn-sm btn-success"
+                    [ngClass]="{ 'active' : filters.launch_year == year}"
+                    (click)="updateApiFilters('launch_year', year)">
+                    {{year}}
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-text app-filter-heading">
+                Successful Launch
+                <hr class="app-filters-hr" />
+              </div>
+
+              <div class="app-filter-button-container">
+                <button class="app-filter-button btn btn-sm btn-success"
+                  [ngClass]="{ 'active' : filters.launch_success === 'true' }"
+                  (click)="updateApiFilters('launch_success', 'true')">
+                  True
+                </button>
+
+                <button class="app-filter-button btn btn-sm btn-success"
+                  [ngClass]="{ 'active' : filters.launch_success === 'false' }"
+                  (click)="updateApiFilters('launch_success', 'false')">
+                  False
+                </button>
+              </div>
+
+              <div class="card-text app-filter-heading">
+                Successful Landing
+                <hr class="app-filters-hr" />
+              </div>
+              <div class="app-filter-button-container">
+                <button class="app-filter-button btn btn-sm btn-success"
+                  [ngClass]="{ 'active' : filters.land_success === 'true' }"
+                  (click)="updateApiFilters('land_success', 'true')">
+                  True
+                </button>
+
+                <button class="app-filter-button btn btn-sm btn-success"
+                  [ngClass]="{ 'active' : filters.land_success === 'false' }"
+                  (click)="updateApiFilters('land_success', 'false')">
+                  False
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
+          <rocket-launch-details [detailsList]="data"> </rocket-launch-details>
+        </div>
+      </div>
+      <div>
+        <h5 class="app-developers-name">
+          Developed by : Chetan Gawade
+        </h5>
+      </div>
+    </div>
+  </div>
+</ng-template>
