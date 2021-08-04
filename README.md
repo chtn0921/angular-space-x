@@ -9,7 +9,7 @@ To run this project locally, run the following command  `yarn start` or `npm sta
 
 ### Deployment
 
-SpaceX app is deployed on 
+SpaceX app is deployed on https://angular-space-x.netlify.app/
 
 
 ## UI And Filter Implementation
