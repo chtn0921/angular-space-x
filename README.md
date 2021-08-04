@@ -16,14 +16,14 @@ SpaceX app is deployed on
 
 >Desktop View
 
-![Alt Text] (https://github.com/chtn0921/angular-space-x/blob/master/space-x-desktop.png)
+(https://github.com/chtn0921/angular-space-x/blob/master/space-x-desktop.png)
 
 >Tablet View
 
-![Alt Text] (https://github.com/chtn0921/angular-space-x/blob/master/space-x-tablet.png)
+(https://github.com/chtn0921/angular-space-x/blob/master/space-x-tablet.png)
 
 >Mobile View
 
-![Alt Text] (https://github.com/chtn0921/angular-space-x/blob/master/space-x-mobile.png)
+(https://github.com/chtn0921/angular-space-x/blob/master/space-x-mobile.png)
 
 Developed By [Chetan Gawade](https://github.com/chtn0921)
